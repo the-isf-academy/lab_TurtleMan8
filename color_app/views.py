@@ -6,19 +6,20 @@ from django.urls import reverse_lazy
 from color_app.models import Color
 from color_app.forms import ColorForm
 
-#######################
+######################
 # Function Based Views
-#######################
+######################
 
 
 def home_view(request):
     "A view function which renders the homepage"
 
     skyblue = Color(name="skyblue", red=135, green=206, blue=250)
+    new_color = Color(name="skyblue", red=140, green=90, blue=170)
 
     params = {
-        "name": "stranger",
-        "color": skyblue,
+        "name": "Ethan Kim",
+        "color": new_color,
     }
     
     response = render(request, 'color_app/index.html', params)
